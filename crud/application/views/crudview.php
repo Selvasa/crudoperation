@@ -4,21 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
     <!-- add bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='<?= base_url()?>assets/css/style.css'/>
+    <!-- adding fontawesome icon cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel='stylesheet' href='<?= base_url()?>assets/css/style.css'/>
    </head>
-<body>
-    <div class='container-fluid bg-secondary'>
-        <div class='container bg-info'>hi
-
+    <body>
+        <div class='container-fluid cont '>
+            <form class='text-black lead pb-4 pt-3'>
+                <div class=''>
+                    <div class='row d-flex  justify-content-center pt-3'>
+                        <div class='col-sm-5'>
+                            <label class='form-label ps-1 pb-2'>User Name : </label>
+                            <input type='text' class='form-control' name='name' placeholder='User Name'/>
+                        </div>
+                        <div class='col-sm-5'>
+                            <label class='form-label ps-1 pb-2'>Email : </label>
+                            <input type='text' class='form-control' name='email' placeholder='Email'/>
+                        </div>
+                    </div>
+                    <div class='row d-flex  justify-content-center pt-4'>
+                        <div class='col-sm-5'>
+                            <label class='form-label ps-1 pb-2'>Password : </label>
+                            <input type='text' class='form-control' name='Password' placeholder='Password'/>
+                        </div>
+                        <div class='col-sm-5'>
+                            <label class='form-label ps-1 pb-2'>Ph No : </label>
+                            <input type='text' class='form-control' name='ph_no' placeholder='Phone Number'/>
+                        </div>
+                    </div>
+                    <div class='row d-flex  justify-content-end mt-3 pt-3'>
+                        <div class='col-sm-2'>
+                            <button class='btn btn-secondary w-100'>
+                                Add User
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div>
-
-        </div>
-       
-    </div>
-</body>
+    </body>
 </html>
