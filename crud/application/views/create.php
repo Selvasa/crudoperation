@@ -15,33 +15,34 @@
    </head>
     <body>
         <div class='container-fluid cont '>
-            <form class='text-black lead pb-4 pt-3'>
+            <form class='text-black lead pb-4 pt-3' method='post' action='<?php echo base_url('index.php/Crudcontroller/addtotable')?>'>
                 <div class=''>
                     <div class='row d-flex  justify-content-center pt-3'>
                         <div class='col-sm-5'>
-                            <label class='form-label ps-1 pb-2'>User Name : </label>
-                            <input type='text' class='form-control' name='name' placeholder='User Name'/>
+                            <label class='form-label ps-1 pb-2'> <i class="bi bi-person-plus-fill"></i> User Name : </label>
+                            <input type='text' class='form-control' name='name' placeholder='User Name' required/>
                         </div>
                         <div class='col-sm-5'>
-                            <label class='form-label ps-1 pb-2'>Email : </label>
-                            <input type='text' class='form-control' name='email' placeholder='Email'/>
+                            <label class='form-label ps-1 pb-2'><i class="bi bi-envelope-fill"></i> Email : </label>
+                            <input type='text' class='form-control' name='email' placeholder='Email' required/>
                         </div>
                     </div>
                     <div class='row d-flex  justify-content-center pt-4'>
                         <div class='col-sm-5'>
-                            <label class='form-label ps-1 pb-2'>Password : </label>
-                            <input type='text' class='form-control' name='Password' placeholder='Password'/>
+                            <label class='form-label ps-1 pb-2'><i class="bi bi-key-fill"></i> Password : </label>
+                            <input type='Password' class='form-control' name='password' placeholder='Password' required/>
                         </div>
                         <div class='col-sm-5'>
-                            <label class='form-label ps-1 pb-2'>Ph No : </label>
-                            <input type='text' class='form-control' name='ph_no' placeholder='Phone Number'/>
+                            <label class='form-label ps-1 pb-2'> <i class="bi bi-telephone-forward-fill"></i> Ph No : </label>
+                            <input type='text' class='form-control' name='phno' placeholder='Phone Number' required/>
                         </div>
                     </div>
                     <div class='row d-flex  justify-content-end mt-3 pt-3'>
                         <div class='col-sm-2'>
-                            <button class='btn btn-secondary w-100'>
-                                Add User
-                            </button>
+                        
+                                <a class='text-decoration-none text-white'>
+                                 <button class='btn btn-secondary w-100' type='submit' value='submit'> Save 
+                                    <i class="bi bi-box-arrow-in-right ps-3"></i></button></a>
                         </div>
                     </div>
                 </div>
