@@ -15,7 +15,7 @@
    </head>
     <body>
         <div class='container-fluid cont '>
-            <form class='text-black lead pb-4 pt-3' method='post' action='<?php echo base_url('index.php/Crudcontroller')?>'>
+            <form class='text-black lead pb-4 pt-3' method='post' action='<?php echo base_url('index.php/Crudcontroller/addtotable')?>'>
                 <div class=''>
                     <div class='row d-flex  justify-content-center pt-3'>
                         <div class='col-sm-5'>

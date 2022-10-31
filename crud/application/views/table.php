@@ -17,7 +17,7 @@
     <div class='container'>
     <div class='row d-flex  justify-content-end mt-3 pt-3'>
         <div class='col-sm-2'>
-                    <a class='text-decoration-none text-white' href='<?php echo base_url('index.php/Crudcontroller/adduser')?>'>
+                    <a class='text-decoration-none text-white' href='<?php echo base_url('index.php/crudcontroller')?>'>
                     <button class='btn btn-secondary w-100'> <i class="bi bi-box-arrow-in-left pe-3"></i> Add </button></a>
         </div>
         <table class='table table-striped table-responsive table-hover mt-2'>
@@ -31,7 +31,6 @@
                 <th>Action</th>
                 </tr>
             </thead>
-        </table>
             <?php 
                 foreach($value as $row){
             ?>
@@ -44,8 +43,8 @@
                 <td><a href='<?php echo base_url('index.php/crudcontroller/edit/'.$row->id ) ?>' class='text-success'>Edit </a><br>
                 <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'> Delete</a></td>
             </tr>
-            <?php }?> 
-        
+            <?php }?>
+        </table>
     </div>
 </body>
 </html>

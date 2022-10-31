@@ -1,20 +1,20 @@
 <?php
 class Crudcontroller extends CI_Controller{
     public function index(){
-        $this->load->view('table');
-        $data=array(
-            'name'=>$this->input->post('name'),
-            'email'=>$this->input->post('email'),
-            'password'=>$this->input->post('password'),
-            'phno'=>$this->input->post('phno')
-        );
-        $this->load->model('Crudmodel');
-        $this->Crudmodel->setvalue($data);
+        $this->load->view('create');
       
     }
     
- function adduser(){
-    $this->load->view('adduser');
+ function addtotable(){
+    $data=array(
+        'name'=>$this->input->post('name'),
+        'email'=>$this->input->post('email'),
+        'password'=>$this->input->post('password'),
+        'phno'=>$this->input->post('phno')
+    );
+    $this->load->model('Crudmodel');
+    $this->Crudmodel->setvalue($data);
+    redirect('crudcontroller/printvalue');
     }
 
     function printvalue(){
@@ -55,5 +55,3 @@ class Crudcontroller extends CI_Controller{
     }
 }
 ?>
- 
-    <!-- redirect('crudcontroller'); -->
