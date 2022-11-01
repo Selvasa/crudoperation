@@ -20,31 +20,34 @@
                     <a class='text-decoration-none text-white' href='<?php echo base_url('index.php/crudcontroller')?>'>
                     <button class='btn btn-secondary w-100'> <i class="bi bi-box-arrow-in-left pe-3"></i> Add </button></a>
         </div>
-        <table class='table table-striped table-responsive table-hover mt-2'>
-            <thead class='table-light'>
+        <!-- create the table and add user-->
+        <div class='table-responsive-md'>
+            <table class='table mt-2 '>
+                <thead class='table-light'>
+                    <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Phone Number</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <?php 
+                    foreach($value as $row){
+                ?>
                 <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Phone Number</th>
-                <th>Action</th>
+                    <td><?php echo $row-> id?></td>
+                    <td><?php echo $row-> name?></td>
+                    <td><?php echo $row-> email?></td>
+                    <td><?php echo $row-> password?></td>
+                    <td><?php echo $row-> phno?></td>
+                    <td><a href='<?php echo base_url('index.php/crudcontroller/edit/'.$row->id ) ?>' class='text-success'><button class='btn btn-primary btn-sm'> Edit </button></a>
+                    <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'><button class='btn btn-danger btn-sm'>Delete</button></a></td>
                 </tr>
-            </thead>
-            <?php 
-                foreach($value as $row){
-            ?>
-            <tr>
-                <td><?php echo $row-> id?></td>
-                <td><?php echo $row-> name?></td>
-                <td><?php echo $row-> email?></td>
-                <td><?php echo $row-> password?></td>
-                <td><?php echo $row-> phno?></td>
-                <td><a href='<?php echo base_url('index.php/crudcontroller/edit/'.$row->id ) ?>' class='text-success'>Edit </a><br>
-                <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'> Delete</a></td>
-            </tr>
-            <?php }?>
-        </table>
+                <?php }?>
+            </table>
+        </div>
     </div>
 </body>
 </html>
