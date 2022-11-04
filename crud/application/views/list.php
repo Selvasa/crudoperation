@@ -17,12 +17,16 @@
     <div class='container'>
     <div class='row d-flex  justify-content-end mt-3 pt-3'>
         <div class='col-sm-2'>
+                    <a class='text-decoration-none text-white' href='<?php echo base_url('index.php/crudcontroller/exportpdf')?>'>
+                    <button class='btn btn-secondary w-100'>Export to PDF </button></a>
+        </div>
+        <div class='col-sm-2'>
                     <a class='text-decoration-none text-white' href='<?php echo base_url('index.php/crudcontroller')?>'>
                     <button class='btn btn-secondary w-100'> <i class="bi bi-box-arrow-in-left pe-3"></i> Add </button></a>
         </div>
         <!-- create the table and add user-->
-        <div class='table-responsive-md'>
-            <table class='table mt-2 '>
+        <div class=''>
+            <table class='table mt-2 table-responsive table-bordered'>
                 <thead class='table-light'>
                     <tr>
                     <th>Id</th>
@@ -43,7 +47,7 @@
                     <td><?php echo $row-> password?></td>
                     <td><?php echo $row-> phno?></td>
                     <td><a href='<?php echo base_url('index.php/crudcontroller/edit/'.$row->id ) ?>' class='text-success'><button class='btn btn-primary btn-sm'> Edit </button></a>
-                    <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'><button class='btn btn-danger btn-sm'>Delete</button></a></td>
+                    <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'><button class='btn btn-danger btn-sm' >Delete</button></a></td>
                 </tr>
                 <?php }?>
             </table>

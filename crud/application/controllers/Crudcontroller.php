@@ -1,6 +1,8 @@
 <?php
+require 'vendor/autoload.php';
+use Dompdf\Dompdf;
 class Crudcontroller extends CI_Controller{
-
+    
     public function index(){
         $this->load->view('create');
     }
@@ -22,7 +24,7 @@ class Crudcontroller extends CI_Controller{
     function printvalue(){
         $this->load->model('Crudmodel');
         $result['value']=$this->Crudmodel->getvalue(); 
-        $this->load->view('table',$result);
+        $this->load->view('list',$result);
     }
 
     // Edit data
@@ -48,9 +50,33 @@ class Crudcontroller extends CI_Controller{
 
     // Delete date
     function delete($id){
+       $val=$this->load->view('alert');
+       if($val==true){
         $this->load->model('crudmodel');
         $this->crudmodel->deletemodel($id);
+       }
+       else{
         redirect('crudcontroller/printvalue');
+       }
+    }
+    function exportpdf(){
+        $this->load->model('crudmodel');
+        $value['value']=$this->crudmodel->export();
+        // $download=
+        $this->load->view('download',$value);
+        // $dompdf= new Dompdf();
+        // $dompdf->loadHtml( $download);
+        // $dompdf->render();
+        // $dompdf->stream("welcome.pdf", array("Attachment"=>0));
+    }
+    function pdf($id){
+        $this->load->model('crudmodel');
+        $name['name']=$this->crudmodel->pdf($id);   
+        $download=$this->load->view('alert',$name,true) ;
+        $dompdf= new Dompdf();
+        $dompdf->loadHtml($download);
+        $dompdf->render();
+        $dompdf->stream();
     }
 }
 ?>
