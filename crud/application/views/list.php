@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel='stylesheet' href='<?php echo base_url()?>assets/css/style.css'/>
 </head>
+
 <body>
     <div class='container'>
     <div class='row d-flex  justify-content-end mt-3 pt-3'>
         <div class='col-sm-2'>
                     <a class='text-decoration-none text-white' href='<?php echo base_url('index.php/crudcontroller/exportpdf')?>'>
-                    <button class='btn btn-secondary w-100'>Export to PDF </button></a>
+                    <button class='btn btn-secondary w-100' >Export to PDF </button></a>
         </div>
         <div class='col-sm-2'>
                     <a class='text-decoration-none text-white' href='<?php echo base_url('index.php/crudcontroller')?>'>
@@ -46,8 +47,8 @@
                     <td><?php echo $row-> email?></td>
                     <td><?php echo $row-> password?></td>
                     <td><?php echo $row-> phno?></td>
-                    <td><a href='<?php echo base_url('index.php/crudcontroller/edit/'.$row->id ) ?>' class='text-success'><button class='btn btn-primary btn-sm'> Edit </button></a>
-                    <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'><button class='btn btn-danger btn-sm' >Delete</button></a></td>
+                    <td><a href='<?php echo base_url('index.php/crudcontroller/edit/'.$row->id ) ?>' class='text-success'><input type='button'  value='Edit'class='btn btn-primary btn-sm'></a>
+                    <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'><input type='button' method='post' value='Delete' class='btn btn-danger btn-sm' onclick='return confirm("Are you sure ?")' name='button' ></a></td>
                 </tr>
                 <?php }?>
             </table>

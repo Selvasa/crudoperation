@@ -49,34 +49,23 @@ class Crudcontroller extends CI_Controller{
     }
 
     // Delete date
-    function delete($id){
-       $val=$this->load->view('alert');
-       if($val==true){
-        $this->load->model('crudmodel');
-        $this->crudmodel->deletemodel($id);
-       }
-       else{
-        redirect('crudcontroller/printvalue');
-       }
+    function delete(){
+        $id=  $this->uri->segment(3);
+            $this->load->model('crudmodel');
+            $this->crudmodel->deletemodel($id);
+            redirect('crudcontroller/printvalue');
+      
     }
+    
     function exportpdf(){
         $this->load->model('crudmodel');
         $value['value']=$this->crudmodel->export();
-        // $download=
-        $this->load->view('download',$value);
-        // $dompdf= new Dompdf();
-        // $dompdf->loadHtml( $download);
-        // $dompdf->render();
-        // $dompdf->stream("welcome.pdf", array("Attachment"=>0));
-    }
-    function pdf($id){
-        $this->load->model('crudmodel');
-        $name['name']=$this->crudmodel->pdf($id);   
-        $download=$this->load->view('alert',$name,true) ;
+        $download=$this->load->view('download',$value,true);
         $dompdf= new Dompdf();
-        $dompdf->loadHtml($download);
+        $dompdf->loadHtml( $download);
         $dompdf->render();
-        $dompdf->stream();
+        $dompdf->stream("welcome.pdf", array("Attachment"=>0));
     }
+    
 }
 ?>

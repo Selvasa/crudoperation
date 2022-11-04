@@ -24,7 +24,6 @@
                     <th>Email</th>
                     <th>Password</th>
                     <th>Phone Number</th>
-                    <th>Action</th>
                     </tr>
                 </thead>
            
@@ -38,8 +37,6 @@
                     <td><?php echo $row-> email?></td>
                     <td><?php echo $row-> password?></td>
                     <td><?php echo $row-> phno?></td>
-                    <td><a href='<?php echo base_url('index.php/crudcontroller/pdf/'.$row->id ) ?>' class='text-success'><button class='btn btn-danger btn-sm'> export </button></a>
-                    </td>
                 </tr>
                 <?php }?>
             </table>
