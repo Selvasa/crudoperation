@@ -35,6 +35,7 @@
                     <th>Email</th>
                     <th>Password</th>
                     <th>Phone Number</th>
+                    <th>Files</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -47,6 +48,7 @@
                     <td><?php echo $row-> email?></td>
                     <td><?php echo $row-> password?></td>
                     <td><?php echo $row-> phno?></td>
+                    <td><?php echo $row->file?></td>
                     <td><a href='<?php echo base_url('index.php/crudcontroller/edit/'.$row->id ) ?>' class='text-success'><input type='button'  value='Edit'class='btn btn-primary btn-sm'></a>
                     <a href='<?php echo base_url().'index.php/crudcontroller/delete/'.$row->id ?>' class='text-danger'><input type='button' method='post' value='Delete' class='btn btn-danger btn-sm' onclick='return confirm("Are you sure ?")' name='button' ></a></td>
                 </tr>

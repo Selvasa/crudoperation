@@ -3,20 +3,20 @@ class Crudmodel extends CI_Model{
 
     function setvalue($data){
         $this->load->database();
-        $this->db->insert('user',$data);
+        $this->db->insert('users',$data);
     }
 
     // Get data from the database
     function getvalue(){
         $this->load->database();
-       return $this->db->get('user')->result();
+       return $this->db->get('users')->result();
     }
 
      // Get data fine by id to edit
     function edit($id){
         $this->load->database();
         $this->db->where('id',$id);
-        return $this->db->get('user')->result();
+        return $this->db->get('users')->result();
     }
 
     // Update data fine by id to edit
@@ -24,7 +24,7 @@ class Crudmodel extends CI_Model{
     {
         $this->load->database();
         $this->db->where('id',$id);
-        $this->db->update('user',$data);
+        $this->db->update('users',$data);
     }
 
     // Delete data fine by id to edit
@@ -32,19 +32,19 @@ class Crudmodel extends CI_Model{
     {
         $this->load->database();
         $this->db->where('id',$id);
-        return $this->db->delete('user');
+        return $this->db->delete('users');
     }
 
     // Export to pdf
     function export(){
         $this->load->database();
-       return $this->db->get('user')->result();
+       return $this->db->get('users')->result();
         
     }
     function pdf($id){
         $this->load->database();
         $this->db->where('id',$id);
-        return $this->db->get('user')->result();
+        return $this->db->get('users')->result();
       
 
         

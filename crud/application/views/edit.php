@@ -42,6 +42,10 @@
                             <label class='form-label ps-1 pb-2'> <i class="bi bi-telephone-forward-fill"></i> Ph No : </label>
                             <input  class='form-control' name='phno' value='<?php echo$datas[0]->phno?>'  />
                         </div>
+                        <div class='col-sm-5 pt-4'>
+                            <label class='form-label ps-1 pb-2'> <i class="bi bi-telephone-forward-fill"></i> File : </label>
+                            <input  class='form-control' name='file' value='<?php echo$datas[0]->file?>'  />
+                        </div>
                     </div>
                    
                     <div class='row d-flex justify-content-start mt-4 pt-3'>
