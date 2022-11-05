@@ -14,10 +14,10 @@ class Crudcontroller extends CI_Controller{
         
         $this->load->model('Crudmodel');
         
-            $data['name']=$this->input->post('name');
-            $data['email']=$this->input->post('email');
-            $data['password']=$this->input->post('password');
-            $data['phno']=$this->input->post('phno');
+        $data['name']=$this->input->post('name');
+        $data['email']=$this->input->post('email');
+        $data['password']=$this->input->post('password');
+        $data['phno']=$this->input->post('phno');
 
         // get file upload file into database with valid name
         $config['upload_path']='./assets/image/';

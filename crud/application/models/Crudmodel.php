@@ -41,14 +41,12 @@ class Crudmodel extends CI_Model{
        return $this->db->get('users')->result();
         
     }
-    function pdf($id){
-        $this->load->database();
-        $this->db->where('id',$id);
-        return $this->db->get('users')->result();
-      
-
+    // function pdf($id){
+    //     $this->load->database();
+    //     $this->db->where('id',$id);
+    //     return $this->db->get('users')->result();
         
-    }
+    // }
 
     }
    
