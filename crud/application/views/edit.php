@@ -12,7 +12,7 @@
 <body>
         
 <div class='container-fluid cont '>
-            <form class='text-black lead pb-4 pt-3' method='post' action='<?php echo base_url('index.php/Crudcontroller/update')?>'>
+            <form class='text-black lead pb-4 pt-3' method='post' enctype='multipart/form-data' action='<?php echo base_url('index.php/Crudcontroller/update')?>'>
                 <div class=' container'>
                       <?php 
                       if(isset($datas)){

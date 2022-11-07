@@ -9,9 +9,8 @@ class Crudmodel extends CI_Model{
     // Get data from the database
     function getvalue(){
         $this->load->database();
-       return $this->db->get('users')->result();
+        return $result=$this->db->get('users')->result();
     }
-
      // Get data fine by id to edit
     function edit($id){
         $this->load->database();

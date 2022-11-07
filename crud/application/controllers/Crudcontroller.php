@@ -21,7 +21,7 @@ class Crudcontroller extends CI_Controller{
 
         // get file upload file into database with valid name
         $config['upload_path']='./assets/image/';
-        $config['allowed_types']='pdf|jpg|jpeg|mp3|mp4|zip|doc';
+        $config['allowed_types']='pdf|jpg|png|jpeg|mp3|mp4|zip|doc';
         $config['max_size']=1024*5;
         
         $this->load->library('upload',$config);
@@ -44,20 +44,34 @@ class Crudcontroller extends CI_Controller{
     function edit($id){
         $this->load->model('crudmodel');
         $data['datas']=$this->crudmodel->edit($id);
+       //have work bending
         $this->load->view('edit',$data);
     }
 
     // Update date
     function update(){
+        $this->load->model('crudmodel');
         $id=$this->input->post('id');
         $data=array(
             'name'=>$this->input->post('name'),
             'email'=>$this->input->post('email'),
             'password'=>$this->input->post('password'),
-            'phno'=>$this->input->post('phno'),
-            'file'=>$this->input->post('file')
+            'phno'=>$this->input->post('phno')
         );
-        $this->load->model('crudmodel');
+        $config['upload_path']='./assets/image/';
+        $config['allowed_types']='pdf|jpg|png|jpeg|mp3|mp4|zip|doc';
+        $config['max_size']=1024*5;
+        // $config['overwrite'] = TRUE;
+        $this->load->library('upload',$config);
+        $this->upload->overwrite = true;
+
+        $this->upload->do_upload('file');
+      
+        $result=$this->upload->data();
+        
+        $data['file']= $result['file_name'];
+       
+        
         $this->crudmodel->updatemodel($id,$data);
         redirect('crudcontroller/printvalue');
     }

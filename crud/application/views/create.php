@@ -36,8 +36,8 @@
                             <input type='text' class='form-control' name='phno' placeholder='Phone Number' />
                         </div>
                     </div>
-                    <div class='row d-flex  justify-content-start pt-4 ps-5 ms-5'>
-                        <div class='col-sm-5 ps-3'>
+                    <div class='row d-flex  justify-content-center pt-4 '>
+                        <div class='col-sm-5'>
                             <label class='form-label ps-1 pb-2'><i class="bi bi-key-fill"></i> Upload Your Files : </label>
                             <input type='file' class='form-control' name='file' placeholder='Password' required/>
                         </div>
