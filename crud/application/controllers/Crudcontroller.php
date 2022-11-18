@@ -5,6 +5,7 @@ use Dompdf\Dompdf;
 
 class Crudcontroller extends CI_Controller{
     
+    
     public function index(){
         $this->load->view('create');
     }
